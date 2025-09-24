@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/icon.png">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h2>Clicker App</h2>
+            <ul>
+                <li>
+                    <button onclick="toHome()">Home</button>
+                </li>
+                <li>
+                    <button onclick="toDesc()">About</button>
+                </li>
+                <li>
+                    <button onclick="toBottom()">Contact</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="main-container-left">
+                <h1>Script-Based Autoclicker for Custom Automation</h1>
+                <p>Save time and boost productivity by automating your mouse clicks in any application.</p>
+                <div>
+                    <button id="main-download" onclick="goToDownload()">Download App</button>
+                </div>
+            </div>
+            <div class="main-container-right">
+                <img src="assets/screenshot.png" alt="Application window screenshot">
+            </div>
+        </div>
+        <h3>Features</h3>
+        <div class="features">
+            <div class="feature">
+                <div class="circle">
+                    <img src="assets/text.png" alt="Text icon">
+                </div>
+                <div class="feature-text">
+                    <h4>Custom Click Scripts</h4>
+                    <p>Design powerful click patterns and automate even the most complex tasks with ease.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="circle">
+                    <img src="assets/desktop.png" alt="Desktop icon">
+                </div>
+                <div class="feature-text">
+                    <h4>Platform Compatibility</h4>
+                    <p>Enjoy seamless performance on Windows, macOS, and Linux. One tool for any of your devices.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="circle">
+                    <img src="assets/pause.png" alt="Pause icon">
+                </div>
+                <div class="feature-text">
+                    <h4>Easily Haltable</h4>
+                    <p>Stay in control, simply move your mouse to halt the clicker instantly, anytime.</p>
+                </div>
+            </div>
+        </div>
+        <section id="how-it-works">
+            <h3>About the Script</h3>
+            <p>Clicker App uses simple, readable scripts. Here's a quick example:</p>
+
+            <div class="how-it-works-container">
+                <pre class="code-block"><code>
+        # Move to coordinates (200, 300)
+        MOVE 200,300
+
+        # Perform a left click
+        CLICK LEFT
+
+        # Wait 2 seconds (2000 milliseconds)
+        WAIT 2000
+
+        # Repeat the following 5 times
+        REPEAT 5
+          MOVE 400,500
+          CLICK RIGHT
+          WAIT 1000
+        END
+
+        # Presses, waits 150ms and releases the 'SHIFT' key
+        PRESS SHIFT
+        WAIT 150
+        RELEASE SHIFT
+                </code></pre>
+
+                <div class="code-explanation">
+                    <ul>
+                        <li><strong>MOVE 200,300</strong> - moves the cursor to position (200, 300).</li>
+                        <li><strong>CLICK LEFT</strong> - left mouse button click.</li>
+                        <li><strong>WAIT 2000</strong> - waits 2 seconds (2000 milliseconds).</li>
+                        <li><strong>REPEAT 5</strong> - repeats code section 5 times.</li>
+                        <li><strong>END</strong> - ends repeat section.</li>
+                        <li><strong>PRESS SHIFT</strong> - presses the 'SHIFT' key.</li>
+                        <li><strong>RELEASE SHIFT</strong> - releases the 'SHIFT' key.</li>
+                    </ul>
+                    <p>
+                        Cursor position is always tracked in <code>Mouse X: ... Mouse Y: ...</code> section and can be
+                        inserted into the script.
+                        <br><br>
+                        The commands <code>CLICK</code>, <code>PRESS</code>, and <code>RELEASE</code> support
+                        <code>LEFT</code>, <code>RIGHT</code>, <code>MIDDLE</code>,and any keyboard key (e.g.,
+                        <code>A-Z</code>, <code>0-9</code>, <code>ENTER</code>, <code>SHIFT</code>,
+                        <code>CONTROL</code>, <code>ALT</code>).
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="download-section">
+            <h3>Ready to Automate?</h3>
+            <p>Download the Clicker App now and start simplifying your tasks!</p>
+            <ul class="download-benefits">
+                <li>
+                    <p>Automate repetitive tasks in seconds</p>
+                </li>
+                <li>
+                    <p>Customizable scripts for any workflow</p>
+                </li>
+                <li>
+                    <p>Works on Windows, macOS, and Linux</p>
+                </li>
+            </ul>
+            <button id="download-button" href="">GitHub releases</button>
+            <button id="source-button" href="">Source code</button>
+            <p>Open-source, free, and safe — check out the code or release builds on GitHub.</p>
+        </div>
+        <section id="manual">
+            <h3>Quick Start Guide</h3>
+            <p>Follow these steps to automate your tasks using Clicker App:</p>
+
+            <ul class="manual-steps">
+                <li>
+                    <p>
+                        Click the <code>Start</code> button to begin executing the script. The app will indicate its
+                        status with a small red/green circle on the top-left of the window. All the non-related to
+                        script commands will be ignored during execution. <code>#</code> may be used for comments to
+                        ensure clarity of execution flow. Make sure not to use comments in the same line as commands.
+                        Indentations do not affect execution. Use the <code>Load Script</code> button to read a script
+                        from a <code>.txt</code> file. The script will appear in the script area ready for execution.
+                        Ensure your script follows the correct syntax. Click the <code>Erase</code> button to remove all
+                        content from the script area. This action cannot be undone. After starting the execution,
+                        everything inside the script window will be locked until the execution is stopped. All the text
+                        inside will become uppercase.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Use the tracking cursor section to capture coordinates. Cursor position is always tracked in
+                        <code>Mouse X: ... Mouse Y: ...</code> section and can be used to insert coordinates into the
+                        script.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        You can use the following commands in your scripts:
+                    </p>
+                    <pre class="manual-code"><code>
+          WAIT 2000
+          # waits 2 seconds
+
+          MOVE 200,300
+          # moves cursor to coordinates X=200, Y=300
+
+          CLICK LEFT
+          # left mouse click
+
+          PRESS SHIFT
+          # press the SHIFT key
+
+          RELEASE SHIFT
+          # release the SHIFT key
+
+          REPEAT 5
+          # repeat the block 5 times
+
+          END
+          # marks the end of a repeat block
+                </code></pre>
+                </li>
+                <li>
+                    <p>
+                        Correct button names for <code>CLICK</code>, <code>PRESS</code>, and <code>RELEASE</code>
+                        are:
+                        <code>LEFT</code>, <code>RIGHT</code>, <code>MIDDLE</code>, and any keyboard keys:<br>
+                        <code>A-Z</code>, <code>0-9</code>, <code>ENTER</code>, <code>SHIFT</code>,
+                        <code>CONTROL</code>, <code>ALT</code>, <code>PAGE_DOWN</code>/<code>PAGE_UP</code>,
+                        <code>F1-F24</code>, <code>ESCAPE</code>, <code>HOME</code>, <code>END</code>,
+                        <code>WINDOWS</code>, <code>BACK_SPACE</code>, <code>DELETE</code>, <code>INSERT</code>,
+                        <code>TAB</code>, <code>NUMPAD0-NUMPAD9</code>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Some keys for MacOS may differ, for example, <code>CONTROL</code> code is treated as
+                        <code>Control ^</code> button, and not as <code>Command ⌘</code> like it usually is translated
+                        from Windows to MacOS. <code>Option ⌥</code> key is translated as <code>ALT</code> command.
+                        <code>Command ⌘</code> key is translated as <code>META</code> command.
+                    </p>
+                <li>
+                    <p>
+                        To stop execution immediately, move your mouse. Note: the current <code>WAIT</code> command will
+                        complete before halting, so it may not stop
+                        instantly. It is advisable to use <code>WAIT</code> command at the beginning of your script to
+                        give yourself time to move the mouse if needed.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Check the small red/green circle on the top-left corner of the window to see if the clicker is
+                        active.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        By combining these commands, you can create precise, repeatable click sequences for any task.
+                        Always test your scripts carefully to ensure they behave as expected. In case everything goes
+                        wrong be ready to halt the script immediately. Depending on your system some commands may take
+                        longer to perform, so please do not expect perfect timing.
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>Clicker App – a free, open-source script-based autoclicker for automation and testing.</p>
+            <ul class="footer-links">
+                <li><a href="" target="_blank">GitHub</a></li>
+                <li><a href="" target="_blank">ReadMe</a></li>
+            </ul>
+            <p>
+                Feel free to fork, modify, or experiment. All contributions are welcome!
+            </p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
